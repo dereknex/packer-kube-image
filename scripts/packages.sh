@@ -46,3 +46,4 @@ apt-mark hold kubelet kubeadm kubectl
 mkdir -p /etc/containerd
 containerd config default > /etc/containerd/config.toml
 sed -i -e 's/systemd_cgroup = false/systemd_cgroup = true/g' /etc/containerd/config.toml
+echo 'KUBELET_EXTRA_ARGS=--cgroup-driver=systemd' > /etc/default/kubelet
